@@ -1,23 +1,26 @@
 package models;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+import javax.persistence.Embeddable;
 
 /**
  * Created by Judith on 29.12.2018.
  */
 
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Embeddable
 public class Clay {
 
     @Getter
     @Setter
-    private String name = "Clay";
+    private String name;
 
     @Getter
     @Setter
-    private String code = "584FFVG88";
+    private String code;
 
 
 }
