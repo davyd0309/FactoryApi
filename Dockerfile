@@ -1,4 +1,4 @@
-FROM 11.0.2-jdk-windowsservercore-1809
+FROM openjdk:latest
 ADD target/FactoryApi-0.0.1-SNAPSHOT.jar .
-EXPOSE 8083
+EXPOSE 8081
 CMD java -jar FactoryApi-0.0.1-SNAPSHOT.jar
