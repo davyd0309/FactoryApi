@@ -1,7 +1,7 @@
 package models;
 
 /**
- * Created by Judith on 25.02.2019.
+ * Created by Konrad on 25.02.2019.
  */
 public class ProductToBeMade {
 

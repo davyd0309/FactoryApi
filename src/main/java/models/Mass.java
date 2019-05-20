@@ -3,11 +3,10 @@ package models;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 
 /**
- * Created by Judith on 22.12.2018.
+ * Created by Konrad on 22.12.2018.
  */
 @NoArgsConstructor
 @AllArgsConstructor

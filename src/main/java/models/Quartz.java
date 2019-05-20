@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.Embeddable;
 
 /**
- * Created by Judith on 29.12.2018.
+ * Created by Konrad on 29.12.2018.
  */
 
 @Builder

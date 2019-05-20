@@ -1,13 +1,14 @@
 package models;
 
 import lombok.*;
+import models.enums.ProductType;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
- * Created by Judith on 09.12.2018.
+ * Created by Konrad on 09.12.2018.
  */
 
 @NoArgsConstructor
@@ -26,6 +27,8 @@ public class Product {
 
     @Transient
     private Employee foundryEmployee;
+
+    private ProductType type;
 
     private LocalDateTime foundryDate;
 
