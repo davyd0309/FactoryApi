@@ -11,7 +11,7 @@ import models.enums.ProductType;
 @Getter
 @Setter
 @Builder
-public class CreateProductRQ {
+public class ProductRQ {
 
     private int number;
     private ProductType type;
