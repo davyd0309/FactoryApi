@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        maven 'M3'
-    }
     stages {
         stage('Checkout'){
             steps {
@@ -10,13 +7,15 @@ pipeline {
             }
         }
 
-        stage('Build'){
+        stage('Compile'){
+            agent {docker 'maven:3.5-alpine'}
             steps {
                 sh 'mvn clean compile'
             }
         }
 
         stage('Test'){
+            agent {docker 'maven:3.5-alpine'}
             steps {
                 sh 'mvn test'
             //podac sciezke do testow
@@ -24,6 +23,7 @@ pipeline {
         }
 
         stage('Package'){
+            agent {docker 'maven:3.5-alpine'}
             steps {
                 sh 'mvn package'
             }
