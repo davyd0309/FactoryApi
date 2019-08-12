@@ -14,18 +14,48 @@ pipeline {
             }
         }
 
-        stage('Test'){
+        stage('Unit tests'){
             agent {docker 'maven:3.5-alpine'}
             steps {
-                sh 'mvn test'
-            //podac sciezke do testow
+                //uruchomienie testow unit
             }
         }
 
-        stage('Package'){
+
+        stage('Integration tests'){
             agent {docker 'maven:3.5-alpine'}
             steps {
-                sh 'mvn package'
+                //uruchomienie testow integra
+            }
+        }
+
+        stage('Build'){
+            agent {docker 'maven:3.5-alpine'}
+            steps {
+                sh 'mvn clean package'
+                //zapisanie paczki
+            }
+        }
+
+        stage('Add to Artifactory'){
+            agent {docker 'maven:3.5-alpine'}
+            steps {
+            //dodanie do JFrog
+            }
+        }
+
+
+        stage('Create Docker image'){
+            agent {docker 'maven:3.5-alpine'}
+            steps {
+                //deploy on Heroku
+            }
+        }
+
+        stage('Deploy'){
+            agent {docker 'maven:3.5-alpine'}
+            steps {
+               //deploy on Heroku
             }
         }
     }
