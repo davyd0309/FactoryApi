@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build and Publish'){
             steps {
-                sh 'gradlew build publishToMavenLocal'
+                sh 'gradle build publishToMavenLocal'
             }
         }
     }
