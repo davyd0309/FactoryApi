@@ -4,6 +4,7 @@
 
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 repositories {
@@ -27,4 +28,20 @@ sourceCompatibility = '1.8'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+        }
+    }
 }
