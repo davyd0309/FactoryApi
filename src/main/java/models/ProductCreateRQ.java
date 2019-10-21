@@ -3,6 +3,9 @@ package models;
 import lombok.*;
 import models.enums.ProductType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Konrad on 06.04.2019.
  */
@@ -11,8 +14,7 @@ import models.enums.ProductType;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductRQ {
+public class ProductCreateRQ {
 
-    private int number;
-    private ProductType type;
+    List<AddProduct> productList = new ArrayList<>();
 }
